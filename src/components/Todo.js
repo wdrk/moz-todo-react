@@ -1,12 +1,12 @@
 import React from "react";
 
-export default function Todo() {
+export default function Todo(props) {
   return (
     <li className="todo stack-small">
       <div className="c-cb">
         <input id="todo-0" type="checkbox" defaultChecked={true} />
         <label htmlFor="todo-0" className="todo-label">
-          Eat
+          {props.name}
         </label>
       </div>
       <div className="btn-group">

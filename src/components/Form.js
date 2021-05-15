@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 function Form(props) {
   function handleChange(e) {
-    console.log("Typing!");
+    console.log(e.target.value);
   }
   const [name, setName] = useState("");
   function handleSubmit(e) {

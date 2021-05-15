@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 
 function Form(props) {
+  const [name, setName] = useState("Use hooks!");
   function handleSubmit(e) {
     e.preventDefault(); /* 버튼을 눌렀을 때 페이지를 다시 로딩하는 것을 막음 */
     props.addTask("Say hello!");

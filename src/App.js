@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { nanoid } from "nanoid";
 import Form from "./components/Form";
 import FilterButton from "./components/FilterButton";
 import Todo from "./components/Todo";
@@ -8,7 +9,7 @@ function App(props) {
 
   function addTask(name) {
     const newTask = {
-      id: "id",
+      id: `todo-${nanoid()}` /* nanoid를 통해서 유일한 id값을 생성함 */,
       name,
       completed: false,
     };

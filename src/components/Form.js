@@ -1,13 +1,16 @@
 import React, { useState } from "react";
 
 function Form(props) {
+  const [name, setName] = useState("");
+
   function handleChange(e) {
     console.log(e.target.value);
   }
-  const [name, setName] = useState("");
+
   function handleSubmit(e) {
     e.preventDefault(); /* 버튼을 눌렀을 때 페이지를 다시 로딩하는 것을 막음 */
-    props.addTask("Say hello!");
+    props.addTask(name);
+    setName("");
   }
   return (
     <form onSubmit={handleSubmit}>

@@ -1,11 +1,11 @@
 import React from "react";
 
 function App(props) {
-  console.log(props);
+  const subject = props.subject;
   return (
     <div className="App">
       <header className="App-header">
-        <p>Hello, world!</p>
+        <p>Hello, {subject}!</p>
       </header>
     </div>
   );

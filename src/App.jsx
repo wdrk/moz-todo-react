@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Todo from "./components/Todo";
 import Form from "./components/Form";
@@ -12,6 +12,7 @@ const FILTER_MAP = {
 const FILTER_NAMES = Object.keys(FILTER_MAP);
 
 function App(props) {
+  const listHeadingRef = useRef(null);
   const [tasks, setTasks] = useState(props.tasks);
   const [filter, setFilter] = useState("All");
   function addTask(name) {
@@ -70,7 +71,9 @@ function App(props) {
       <h1>TodoMatic</h1>
       <Form addTask={addTask} />
       <div className="filters btn-group stack-exception">{filterList}</div>
-      <h2 id="list-heading">{headingText}</h2>
+      <h2 id="list-heading" tabIndex="-1" ref={listHeadingRef}>
+        {headingText}
+      </h2>
       <ul
         role="list"
         className="todo-list stack-large stack-exception"
